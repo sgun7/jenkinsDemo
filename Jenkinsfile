@@ -1,7 +1,7 @@
 pipeline {
 
     agent any
-    enviorment { //All defined variables here
+    environment { //All defined variables here
         NEW_VERSION = '1.3.0'
     }
     
