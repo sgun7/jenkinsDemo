@@ -1,13 +1,17 @@
 pipeline {
 
     agent any
+    enviorment { //All defined variables here
+        NEW_VERSION = '1.3.0'
+    }
     
     stages {
     
         stage("build") {
         
             steps {
-                 sh "ls -la ${pwd()}"
+                echo 'building the application...'
+                echo "building version ${NEW_VERSION}"
             }
         }
         
