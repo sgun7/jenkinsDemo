@@ -8,7 +8,7 @@ pipeline {
         
             steps {
                 echo 'building the application...'
-                sh "cat README.md"
+                sh "ls"
             }
         }
         
