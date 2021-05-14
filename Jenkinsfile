@@ -8,6 +8,7 @@ pipeline {
         
             steps {
                 echo 'building the application...'
+                sh "cat README.md"
             }
         }
         
@@ -24,5 +25,5 @@ pipeline {
                 echo 'deplying the application...'
             }
         }
-    }   
+    }
 }
