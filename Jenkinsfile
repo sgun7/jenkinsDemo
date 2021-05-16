@@ -1,18 +1,33 @@
+def gv
+
 pipeline {
 
     agent any
     environment { //All defined variables here
         NEW_VERSION = '1.3.0'
     }
+
+    tools {
+        maven 'Maven'
+    }
     
     stages {
     
-        stage("build") {
-        
-            steps {
-                echo 'building the application...'
-                echo "building version ${NEW_VERSION}"
-                echo "Build number is ${BUILD_NUMBER}"
+        stage("init") {
+           steps {
+               script {
+                    gv = load "script.groovy"
+               }
+           }
+        }
+        stage("build")
+        {
+            steps
+            {
+                script 
+                {
+                    gv.buildApp()
+                }
             }
         }
         
